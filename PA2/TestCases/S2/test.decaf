@@ -1,0 +1,21 @@
+class Main {
+    static void main(){
+    	int n;
+    	n = ReadInteger();
+      int a;
+      int b;
+      complex ca;
+      bool flag;
+      a=2;
+      b=3;
+      a = case(n){
+  	     0:a+b;
+         3:a+3;
+         3:a+3;
+         4:ca+flag;
+         6:b*2+6;
+         default:ca+flag;
+		};
+	}
+}
+

@@ -1,0 +1,92 @@
+FUNCTION _Father_New : 
+BASIC BLOCK 0 : 
+1	_T3 = 8 [ 2 ]
+2	parm _T3
+3	_T4 =  call _Alloc [ 5 7 8 ]
+4	_T5 = 0 [ 5 ]
+5	*(_T4 + 4) = _T5
+6	_T6 = VTBL <_Father> [ 7 ]
+7	*(_T4 + 0) = _T6
+8	END BY RETURN, result = _T4
+
+FUNCTION _Child_New : 
+BASIC BLOCK 0 : 
+9	_T7 = 8 [ 10 ]
+10	parm _T7
+11	_T8 =  call _Alloc [ 13 15 16 ]
+12	_T9 = 0 [ 13 ]
+13	*(_T8 + 4) = _T9
+14	_T10 = VTBL <_Child> [ 15 ]
+15	*(_T8 + 0) = _T10
+16	END BY RETURN, result = _T8
+
+FUNCTION _Main_New : 
+BASIC BLOCK 0 : 
+17	_T11 = 4 [ 18 ]
+18	parm _T11
+19	_T12 =  call _Alloc [ 21 22 ]
+20	_T13 = VTBL <_Main> [ 21 ]
+21	*(_T12 + 0) = _T13
+22	END BY RETURN, result = _T12
+
+FUNCTION _Father.method : 
+BASIC BLOCK 0 : 
+23	_T14 = 0 [ 24 ]
+24	_T15 = (_T1 > _T14) [ 27 ]
+25	_T16 = 10 [ 26 ]
+26	_T17 = (_T1 < _T16) [ 27 ]
+27	_T18 = (_T15 && _T17) [ 28 ]
+28	END BY BEQZ, if _T18 = 
+	    0 : goto 2; 1 : goto 1
+BASIC BLOCK 1 : 
+29	_T19 = 3 [ 30 ]
+30	_T20 = (_T1 - _T19) [ 31 ]
+31	_T1 = _T20 [ 38 ]
+32	_T21 = *(_T0 + 4) [ ]
+33	_T22 = *(_T0 + 4) [ 35 ]
+34	_T23 = 3 [ 35 ]
+35	_T24 = (_T22 - _T23) [ 36 ]
+36	*(_T0 + 4) = _T24
+37	parm _T0
+38	parm _T1
+39	_T25 = *(_T0 + 0) [ 40 ]
+40	_T26 = *(_T25 + 8) [ 41 ]
+41	_T27 =  call _T26 [ 42 ]
+42	END BY RETURN, result = _T27
+BASIC BLOCK 2 : 
+43	END BY RETURN, result = _T1
+
+FUNCTION _Child.start : 
+BASIC BLOCK 0 : 
+44	_T28 = _T2 [ 45 47 ]
+45	_T29 = *(_T28 + 4) [ ]
+46	_T30 = 5 [ 47 ]
+47	*(_T28 + 4) = _T30
+48	_T31 = 0 [ 49 ]
+49	_T28 = _T31 [ ]
+50	_T32 = *(_T2 + 4) [ 51 ]
+51	parm _T32
+52	call _PrintInt
+53	END BY RETURN, void result
+
+FUNCTION main : 
+BASIC BLOCK 0 : 
+54	_T34 =  call _Child_New [ 55 ]
+55	_T33 = _T34 [ 57 59 67 68 ]
+56	_T35 = 5 [ 58 ]
+57	parm _T33
+58	parm _T35
+59	_T36 = *(_T33 + 0) [ 60 ]
+60	_T37 = *(_T36 + 8) [ 61 ]
+61	_T38 =  call _T37 [ 62 ]
+62	parm _T38
+63	call _PrintInt
+64	_T39 = "\n" [ 65 ]
+65	parm _T39
+66	call _PrintString
+67	parm _T33
+68	_T40 = *(_T33 + 0) [ 69 ]
+69	_T41 = *(_T40 + 12) [ 70 ]
+70	call _T41
+71	END BY RETURN, void result
+

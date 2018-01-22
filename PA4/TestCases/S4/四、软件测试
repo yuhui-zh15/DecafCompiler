@@ -1,0 +1,68 @@
+四、软件测试
+
+等价类划分是指将输入根据输入要求的范围划分出不同的区域
+
+例如本题要求1<=mm<12,1<=dd<=31,????<=yyyy<=????
+可以划分出 D1 ....
+
+边界测试是指在边界进行测试 例如取mm = 0 dd = 32等
+
+代码怎么写？？？？如果有异常
+
+assertRaise
+
+三、软件设计
+
+public ... {
+    switch t {
+    case COMMISSIONED:
+        return new CommissionedEmployee();
+    ...
+    }
+}
+
+工厂模式
+多态
+
+可维护性强
+可修改 可复用 可拓展
+开闭原则
+反正就是好
+
+二、软件需求
+
+泳道图
+用例图
+
+一、简答
+
+1.版本控制
+
+git branch -b test
+
+git branch
+
+git add file.txt
+git commit -m "version 1.2(test)"
+
+git status
+...
+
+2. 代码风格
+
+1. explain why not how
+2. 清晰易懂，不重复
+
+不得当。。。。
+
+五、案例分析
+
+设计：没有进行异常处理 -> 精确设计，防御设计
+
+测试：没有测试完整->白盒测试 黑盒测试 各种测试
+
+运行：没有设置备份多版本程序->多版本 应急机制
+
+
+
+

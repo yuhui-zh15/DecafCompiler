@@ -1,0 +1,3 @@
+*** Error at (14,10): condition is not unique
+*** Error at (15,14): incompatible operands: complex + bool
+*** Error at (17,20): incompatible operands: complex + bool
